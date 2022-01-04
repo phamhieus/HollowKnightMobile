@@ -1,0 +1,83 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Platform
+  - Enemy
+  - Trap
+  - Decoration
+  - Background
+  - AirWall
+  - Wall
+  - Trigger
+  - Switch
+  - HUD
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - Player
+  - PlayerInvulnerable
+  - Enemy
+  - Platform
+  - Wall
+  - Trap
+  - Switch
+  - Decoration
+  - Background
+  - AirWall
+  - HUD
+  - Trigger
+  - Projectile
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Backgournd
+    uniqueID: 160031007
+    locked: 0
+  - name: Decoration
+    uniqueID: 3008843227
+    locked: 0
+  - name: Trap
+    uniqueID: 1284562437
+    locked: 0
+  - name: Floor
+    uniqueID: 2964051827
+    locked: 0
+  - name: Wall
+    uniqueID: 2153143505
+    locked: 0
+  - name: Platform
+    uniqueID: 2142656153
+    locked: 0
+  - name: Enemy
+    uniqueID: 3761964161
+    locked: 0
+  - name: Player
+    uniqueID: 616613477
+    locked: 0
+  - name: Projectile
+    uniqueID: 3965615513
+    locked: 0
+  - name: HUD
+    uniqueID: 2293902781
+    locked: 0
