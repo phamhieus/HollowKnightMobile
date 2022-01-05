@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using System.Collections;
 
 using UnityEngine;
@@ -60,7 +59,7 @@ public class PlayerController : MonoBehaviour
   private Vector2 _touchStartPosition, _touchEndPosition;
   private string _direction;
 
-  public Joystick JoystickControl;
+  public FixedJoystick JoystickControl;
 
   /// <summary>
   /// Start is called before the first frame update
@@ -76,7 +75,8 @@ public class PlayerController : MonoBehaviour
     _transform = gameObject.GetComponent<Transform>();
     _spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
     _boxCollider = gameObject.GetComponent<BoxCollider2D>();
-
+    var canvas = gameObject.GetComponentInChildren<Canvas>();
+    JoystickControl = canvas?.GetComponentInChildren<FixedJoystick>();
   }
 
   // Update is called once per frame
@@ -208,24 +208,34 @@ public class PlayerController : MonoBehaviour
 
   private void HandleSwitchControl()
   {
-
-    float horizontalMoveSpeed = JoystickControl.Horizontal * moveSpeed;
-
-    _animator.SetFloat("Speed", horizontalMoveSpeed);
-    var direction = JoystickControl.Direction;
-    if (Input.GetButtonDown("Jump"))
-    {
-
-    }
-
-
+    MoveAnimator(JoystickControl.Horizontal * moveSpeed);
   }
 
   private void Move()
   {
     // calculate movement
-    float horizontalMovement = Input.GetAxis("Horizontal") * moveSpeed;
+    MoveAnimator(Input.GetAxis("Horizontal") * moveSpeed);
+  }
 
+  private void JumpControl()
+  {
+    if (!Input.GetButtonDown("Jump"))
+    {
+      return;
+    }
+
+    if (_isClimb)
+    {
+      ClimbJump();
+    }
+    else if (jumpLeft > 0)
+    {
+      Jump();
+    }
+  }
+
+  private void MoveAnimator( float horizontalMovement)
+  {
     // set velocity
     Vector2 newVelocity;
     newVelocity.x = horizontalMovement;
@@ -270,23 +280,6 @@ public class PlayerController : MonoBehaviour
     else
     {
       _animator.ResetTrigger("stopTrigger");
-    }
-  }
-
-  private void JumpControl()
-  {
-    if (!Input.GetButtonDown("Jump"))
-    {
-      return;
-    }
-
-    if (_isClimb)
-    {
-      ClimbJump();
-    }
-    else if (jumpLeft > 0)
-    {
-      Jump();
     }
   }
 

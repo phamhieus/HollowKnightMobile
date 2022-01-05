@@ -2648,6 +2648,12 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1824840544}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &789592051 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4195380477820900, guid: 3f189b4e844dd4c15bacde99d721494d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1824840544}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &802777482
 GameObject:
   m_ObjectHideFlags: 0
@@ -4640,7 +4646,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1453733384
 GameObject:
@@ -4846,8 +4852,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1213805708}
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_Father: {fileID: 789592051}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -5033,6 +5039,59 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 5452049556027793890}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1570548170 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2929252283123773939, guid: aaa2c939c0359ac4dbce3f49e8b90252,
+    type: 3}
+  m_PrefabInstance: {fileID: 728250277}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1570548171 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2929252283123773951, guid: aaa2c939c0359ac4dbce3f49e8b90252,
+    type: 3}
+  m_PrefabInstance: {fileID: 728250277}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1570548170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45977bbae16431c46a013576a1aea384, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1570548174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1570548170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 769e9f60be5268c4389c41308ffe43f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 0
+  moveSpeed: 0
+  jumpSpeed: 0
+  jumpLeft: 0
+  climbJumpForce: {x: 0, y: 0}
+  fallSpeed: 0
+  sprintSpeed: 0
+  sprintTime: 0
+  sprintInterval: 0
+  attackInterval: 0
+  invulnerableColor: {r: 0, g: 0, b: 0, a: 0}
+  hurtRecoil: {x: 0, y: 0}
+  hurtTime: 0
+  hurtRecoverTime: 0
+  deathRecoil: {x: 0, y: 0}
+  deathDelay: 0
+  attackUpRecoil: {x: 0, y: 0}
+  attackForwardRecoil: {x: 0, y: 0}
+  attackDownRecoil: {x: 0, y: 0}
+  attackUpEffect: {fileID: 0}
+  attackForwardEffect: {fileID: 0}
+  attackDownEffect: {fileID: 0}
+  JoystickControl: {fileID: 1570548171}
 --- !u!1 &1614104399
 GameObject:
   m_ObjectHideFlags: 0
@@ -6016,7 +6075,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
