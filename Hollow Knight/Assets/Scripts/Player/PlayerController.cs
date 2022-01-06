@@ -49,6 +49,8 @@ public class PlayerController : MonoBehaviour
   private Transform _transform;
   private SpriteRenderer _spriteRenderer;
   private BoxCollider2D _boxCollider;
+  public Button ButtonFight;
+  private Button ButtonJump;
 
  // public Text PhaseDisplayText;
   private Touch _theTouch;
@@ -76,7 +78,19 @@ public class PlayerController : MonoBehaviour
     _spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
     _boxCollider = gameObject.GetComponent<BoxCollider2D>();
     var canvas = gameObject.GetComponentInChildren<Canvas>();
+
     JoystickControl = canvas?.GetComponentInChildren<FixedJoystick>();
+
+    Button[] buttons = canvas?.GetComponentsInChildren<Button>();
+
+    if(buttons.Length > 1)
+    {
+      ButtonFight = buttons[0];
+      ButtonJump = buttons[1];
+
+      ButtonFight.onClick.AddListener(Attack);
+      ButtonJump.onClick.AddListener(OnJumpControlPressed);
+    }
   }
 
   // Update is called once per frame
@@ -234,6 +248,18 @@ public class PlayerController : MonoBehaviour
     }
   }
 
+  private void OnJumpControlPressed()
+  {
+    if (_isClimb)
+    {
+      ClimbJump();
+    }
+    else if (jumpLeft > 0)
+    {
+      Jump();
+    }
+  }
+
   private void MoveAnimator( float horizontalMovement)
   {
     // set velocity
@@ -306,7 +332,7 @@ public class PlayerController : MonoBehaviour
 
   private void AttackControl()
   {
-    if (Input.GetKeyDown(KeyCode.J) && !_isClimb && _isAttackable)
+    if (Input.GetKeyDown(KeyCode.J) && !_isClimb && _isAttackable )
     {
       Attack();
     }
