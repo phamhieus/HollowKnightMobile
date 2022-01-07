@@ -77,6 +77,7 @@ public class PlayerController : MonoBehaviour
     _transform = gameObject.GetComponent<Transform>();
     _spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
     _boxCollider = gameObject.GetComponent<BoxCollider2D>();
+
     var canvas = gameObject.GetComponentInChildren<Canvas>();
 
     JoystickControl = canvas?.GetComponentInChildren<FixedJoystick>();
